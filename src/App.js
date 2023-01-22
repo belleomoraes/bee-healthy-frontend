@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import Home from './pages/Home';
-
+import Dashboard from './pages/Dashboard';
 import Calendar from './pages/Dashboard/Calendar';
 import History from './pages/Dashboard/History';
 import Profile from './pages/Dashboard/Profile';
@@ -21,12 +21,13 @@ export default function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
 
-          <Route path="/dashboard">
+          <Route path="/dashboard" element={<Dashboard />}>
             <Route path="profile" element={<Profile />} />
             <Route path="exam" element={<Exam />} />
             <Route path="history" element={<History />} />
             <Route path="calendar" element={<Calendar />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="logout" element={<Settings />} />
             <Route index path="*" element={<Navigate to="/dashboard/profile" />} />
           </Route>
         </Routes>
