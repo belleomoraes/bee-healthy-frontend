@@ -59,5 +59,12 @@ const Button = styled.button`
       font-size: 20px;
       color: #333333;
     }
+
+    h1 {
+      font-size: 8px !important;
+    }
+    img {
+      width: 20px !important;
+    }
   }
 `;

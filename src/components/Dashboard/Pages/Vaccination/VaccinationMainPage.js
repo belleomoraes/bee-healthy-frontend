@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SearchBar from '../../../Forms/SearchBar';
+import SearchBar from '../../SearchBar';
 import { MdAddCircle } from 'react-icons/md';
 import { Button } from '../../GeneralStyles/Button';
 import VaccinationRegistration from './VaccinationRegistration';

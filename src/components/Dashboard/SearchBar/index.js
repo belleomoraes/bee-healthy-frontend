@@ -1,4 +1,3 @@
-import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
 import { IoSearchCircle } from 'react-icons/io5';
 
@@ -17,7 +16,6 @@ const Display = styled.div`
   align-items: center;
   justify-content: space-between;
   font-size: 7vh;
-
 `;
 const InputBar = styled.div`
   width: 100%;

@@ -45,17 +45,10 @@ export default function NavigationBar() {
         </NavigationButton>
       </Link>
 
-      <Link to="/dashboard/measurement">
-        <NavigationButton active={isActive('/dashboard/measurement')}>
+      <Link to="/dashboard/measurements">
+        <NavigationButton active={isActive('/dashboard/measurements')}>
           <MdOutlineMedicalServices />
           <span>Medidas para controle</span>
-        </NavigationButton>
-      </Link>
-
-      <Link to="/dashboard/medicine">
-        <NavigationButton active={isActive('/dashboard/medicine')}>
-          <GiMedicines />
-          <span>Medicamentos</span>
         </NavigationButton>
       </Link>
 
@@ -75,7 +68,7 @@ const Container = styled.div`
   background-color: #f1df38;
   width: 100px;
   height: 100%;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin-right: 4vw;
   top: 0;
   bottom: 0;
