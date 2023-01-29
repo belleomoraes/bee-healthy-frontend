@@ -3,36 +3,45 @@ import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import styled from 'styled-components';
 import DateFnsUtils from '@date-io/date-fns';
 import Input from '../../../Forms/Input';
-import { Button } from '../../GeneralStyles/Button';
+import { Button } from '../../../Forms/Button';
+import { MdAddCircle } from 'react-icons/md';
 
-export default function Profile() {
+export default function History() {
   return (
     <>
-      <StyledTypography variant="h4">Perfil</StyledTypography>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <Container>
           <FormWrapper>
             <InputWrapper>
-              <Input label="Nome Completo" name="name" type="text" />
+              <Input label="Data" name="date" type="text" />
             </InputWrapper>
             <InputWrapper>
-              <Input name="cpf" label="CPF" type="text" maxLength="14" mask="999.999.999-99" />
+              <Input label="Tipo" name="type" type="text" />
             </InputWrapper>
             <InputWrapper>
-              <Input label="Data de nascimento" name="birthday" mask="00/00/0000" />
+              <Input label="Descrição" name="description" type="text" />
             </InputWrapper>
             <InputWrapper>
-              <Input label="Sexo" name="sex" />
+              <Input label="Local ou médico" name="location" type="text" />
             </InputWrapper>
             <InputWrapper>
-              <Input label="Tipo Sanguíneo" name="blood" />
+              <Display>
+                <h1>Observações</h1>
+                <MdAddCircle />
+              </Display>
+              <Input label="Insira uma observação" name="observations" type="text" />
             </InputWrapper>
             <InputWrapper>
-              <Input label="Telefone" name="phone" />
+              <Display>
+                <h1>Arquivos</h1>
+                <MdAddCircle />
+              </Display>
+              <Input label="Insira um arquivo" name="files" />
             </InputWrapper>
           </FormWrapper>
+
           <SubmitContainer>
-            <Button type="submit">Salvar informações</Button>
+            <Button type="submit">Salvar alterações</Button>
           </SubmitContainer>
         </Container>
       </MuiPickersUtilsProvider>
@@ -48,20 +57,31 @@ const SubmitContainer = styled.div`
   margin-top: 40px !important;
   width: 40% !important;
 `;
-
+const Display = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2vh 2vh;
+  font-size: 5vh;
+  > h1 {
+    font-size: 4vh !important;
+  }
+`;
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  width: 100%;
   padding: 4vh 2vw;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 
 const FormWrapper = styled.form`
   display: flex;
-  width: 100%;
   flex-wrap: wrap;
+  width: 100%;
+
   > div {
     width: calc(50% - 20px);
     margin: 0 10px 0 0;
@@ -76,6 +96,11 @@ const FormWrapper = styled.form`
 `;
 
 const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
   > div {
     width: 100%;
   }

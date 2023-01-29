@@ -71,6 +71,10 @@ const Container = styled.div`
   height: 100%;
   justify-content: flex-start;
   margin-right: 4vw;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 1;
 
   > a {
     text-decoration: none;
@@ -79,6 +83,9 @@ const Container = styled.div`
   @media (max-width: 600px) {
     width: 100%;
     flex-direction: row;
-    margin-bottom: 4vh;
+    margin-bottom: 3vh;
+    position: fixed;
+    top: 0;
+    height: 10%;
   }
 `;

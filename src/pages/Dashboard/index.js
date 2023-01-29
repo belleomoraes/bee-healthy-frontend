@@ -15,6 +15,7 @@ export default function Dashboard() {
 
 const PagesContainer = styled.div`
   padding: 8vh 2vw;
+  margin-left: 100px;
 
   & > * {
     text-align: initial;
@@ -22,6 +23,8 @@ const PagesContainer = styled.div`
 
   @media (max-width: 600px) {
     padding: 2vh 6vw;
+    margin-left: 10px;
+    margin-top: 80px;
   }
 `;
 
