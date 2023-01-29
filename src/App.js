@@ -5,11 +5,12 @@ import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
-import Calendar from './components/Dashboard/Pages/Calendar';
-import History from './components/Dashboard/Pages/History';
+import Vaccination from './components/Dashboard/Pages/Vaccination';
+import Exams from './components/Dashboard/Pages/Exams';
 import Profile from './components/Dashboard/Pages/Profile';
-import Exam from './components/Dashboard/Pages/Exam';
-import Settings from './components/Dashboard/Pages/Settings';
+import Measurement from './components/Dashboard/Pages/Measurements';
+import Medicine from './components/Dashboard/Pages/Medicine';
+import LogOut from './components/Dashboard/Pages/LogOut';
 import GlobalStyle from './assets/styles/GlobalStyle';
 
 export default function App() {
@@ -24,11 +25,11 @@ export default function App() {
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="profile" element={<Profile />} />
-            <Route path="exam" element={<Exam />} />
-            <Route path="history" element={<History />} />
-            <Route path="calendar" element={<Calendar />} />
-            <Route path="settings" element={<Settings />} />
-            <Route path="logout" element={<Settings />} />
+            <Route path="vaccination" element={<Vaccination />} />
+            <Route path="exams" element={<Exams />} />
+            <Route path="medicine" element={<Medicine />} />
+            <Route path="measurements" element={<Measurement />} />
+            <Route path="logout" element={<LogOut />} />
             <Route index path="*" element={<Navigate to="/dashboard/profile" />} />
           </Route>
         </Routes>

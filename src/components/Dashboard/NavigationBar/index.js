@@ -1,13 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
-
 import styled from 'styled-components';
-
 import { FaUserAlt, FaCalendarAlt } from 'react-icons/fa';
-import { BiStats } from 'react-icons/bi';
-import { AiFillSetting } from 'react-icons/ai';
+import { GiMedicines } from 'react-icons/gi';
+import { MdOutlineMedicalServices } from 'react-icons/md';
+import { TbVaccine } from 'react-icons/tb';
 import { IoDocumentTextSharp, IoLogOut } from 'react-icons/io5';
-
 import NavigationButton from './NavigationButton';
+import logo from '../../../assets/images/bee-healthy.png';
 
 export default function NavigationBar() {
   const location = useLocation();
@@ -18,6 +17,13 @@ export default function NavigationBar() {
 
   return (
     <Container>
+      <Link to="/home">
+        <NavigationButton active={isActive('/home')}>
+          <img src={logo} width="50px" />
+          <h1>bee-healthy</h1>
+        </NavigationButton>
+      </Link>
+
       <Link to="/dashboard/profile">
         <NavigationButton active={isActive('/dashboard/profile')}>
           <FaUserAlt />
@@ -25,31 +31,31 @@ export default function NavigationBar() {
         </NavigationButton>
       </Link>
 
-      <Link to="/dashboard/calendar">
-        <NavigationButton active={isActive('/dashboard/calendar')}>
-          <FaCalendarAlt />
-          <span>Agenda</span>
-        </NavigationButton>
-      </Link>
-
-      <Link to="/dashboard/history">
-        <NavigationButton active={isActive('/dashboard/history')}>
-          <BiStats />
-          <span>Histórico</span>
-        </NavigationButton>
-      </Link>
-
-      <Link to="/dashboard/exam">
-        <NavigationButton active={isActive('/dashboard/exam')}>
+      <Link to="/dashboard/exams">
+        <NavigationButton active={isActive('/dashboard/exams')}>
           <IoDocumentTextSharp />
-          <span>Agendamento</span>
+          <span>Exames</span>
         </NavigationButton>
       </Link>
 
-      <Link to="/dashboard/settings">
-        <NavigationButton active={isActive('/dashboard/settings')}>
-          <AiFillSetting />
-          <span>Configurações</span>
+      <Link to="/dashboard/vaccination">
+        <NavigationButton active={isActive('/dashboard/vaccination')}>
+          <TbVaccine />
+          <span>Vacinas</span>
+        </NavigationButton>
+      </Link>
+
+      <Link to="/dashboard/measurement">
+        <NavigationButton active={isActive('/dashboard/measurement')}>
+          <MdOutlineMedicalServices />
+          <span>Medidas para controle</span>
+        </NavigationButton>
+      </Link>
+
+      <Link to="/dashboard/medicine">
+        <NavigationButton active={isActive('/dashboard/medicine')}>
+          <GiMedicines />
+          <span>Medicamentos</span>
         </NavigationButton>
       </Link>
 
@@ -76,6 +82,10 @@ const Container = styled.div`
   position: fixed;
   z-index: 1;
 
+  h1 {
+    font-family: Sacramento;
+    font-size: 22px;
+  }
   > a {
     text-decoration: none;
   }

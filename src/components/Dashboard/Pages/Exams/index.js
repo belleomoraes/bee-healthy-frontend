@@ -1,12 +1,12 @@
 import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
-import HistoryMainPage from './HistoryMainPage';
+import ExamMainPage from './ExamMainPage';
 
-export default function History() {
+export default function Exams() {
   return (
     <>
-      <StyledTypography variant="h4">Histórico</StyledTypography>
-      <HistoryMainPage />
+      <StyledTypography variant="h4">Exames</StyledTypography>
+      <ExamMainPage />
     </>
   );
 }

@@ -6,11 +6,10 @@ export default function NavigationButton({ active, children }) {
 
 const Button = styled.button`
   width: 100%;
-  height: 100px;
+  height: 90px;
   border: none;
   background-color: #f1df38;
   cursor: pointer;
- margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,21 +37,27 @@ const Button = styled.button`
       font-size: 9px;
     }
     & > *:first-child {
-    font-size: 20px;
-    color: #333333;
+      font-size: 20px;
+      color: #333333;
+    }
+    h1 {
+      font-size: 12px;
+    }
+    img {
+      width: 30px;
+    }
   }
 
   @media (max-width: 300px) {
     width: 100%;
     height: 100%;
-    padding: 1vh 2.3vw;
+    padding: 1vh 2vw;
     span {
       font-size: 8px;
     }
     & > *:first-child {
-    font-size: 20px;
-    color: #333333;
-  }
- 
+      font-size: 20px;
+      color: #333333;
+    }
   }
 `;

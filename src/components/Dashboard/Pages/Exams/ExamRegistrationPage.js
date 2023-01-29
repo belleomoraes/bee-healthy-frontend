@@ -6,7 +6,7 @@ import Input from '../../../Forms/Input';
 import { Button } from '../../../Forms/Button';
 import { MdAddCircle } from 'react-icons/md';
 
-export default function History() {
+export default function ExamRegistration() {
   return (
     <>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -24,13 +24,7 @@ export default function History() {
             <InputWrapper>
               <Input label="Local ou médico" name="location" type="text" />
             </InputWrapper>
-            <InputWrapper>
-              <Display>
-                <h1>Observações</h1>
-                <MdAddCircle />
-              </Display>
-              <Input label="Insira uma observação" name="observations" type="text" />
-            </InputWrapper>
+           
             <InputWrapper>
               <Display>
                 <h1>Arquivos</h1>
