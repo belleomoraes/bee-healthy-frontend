@@ -10,7 +10,7 @@ const Button = styled.button`
   border: none;
   background-color: #f1df38;
   cursor: pointer;
-
+ margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,6 +31,28 @@ const Button = styled.button`
   }
 
   @media (max-width: 600px) {
-    height: 80px;
+    width: 100%;
+    height: 100%;
+    padding: 1vh 3.6vw;
+    span {
+      font-size: 9px;
+    }
+    & > *:first-child {
+    font-size: 20px;
+    color: #333333;
+  }
+
+  @media (max-width: 300px) {
+    width: 100%;
+    height: 100%;
+    padding: 1vh 2.3vw;
+    span {
+      font-size: 8px;
+    }
+    & > *:first-child {
+    font-size: 20px;
+    color: #333333;
+  }
+ 
   }
 `;

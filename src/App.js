@@ -5,22 +5,23 @@ import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
-import Calendar from './pages/Dashboard/Calendar';
-import History from './pages/Dashboard/History';
-import Profile from './pages/Dashboard/Profile';
-import Exam from './pages/Dashboard/Exam';
-import Settings from './pages/Dashboard/Settings';
+import Calendar from './components/Dashboard/Pages/Calendar';
+import History from './components/Dashboard/Pages/History';
+import Profile from './components/Dashboard/Pages/Profile';
+import Exam from './components/Dashboard/Pages/Exam';
+import Settings from './components/Dashboard/Pages/Settings';
+import GlobalStyle from './assets/styles/GlobalStyle';
 
 export default function App() {
   return (
     <>
       <ToastContainer />
+      <GlobalStyle />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
-
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="profile" element={<Profile />} />
             <Route path="exam" element={<Exam />} />

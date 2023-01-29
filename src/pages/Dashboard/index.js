@@ -1,21 +1,41 @@
 import styled from 'styled-components';
-
+import { Outlet } from 'react-router-dom';
 import NavigationBar from '../../components/Dashboard/NavigationBar';
 
-import DashboardLayout from '../../layouts/DashboardLayout';
-
 export default function Dashboard() {
-  return <NavigationBar />;
+  return (
+    <DashboardContainer>
+      <NavigationBar />
+      <PagesContainer>
+        <Outlet />
+      </PagesContainer>
+    </DashboardContainer>
+  );
 }
 
-const Container = styled.div`
-  padding: 30px;
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
+const PagesContainer = styled.div`
+  padding: 8vh 2vw;
+
+  & > * {
+    text-align: initial;
+  }
 
   @media (max-width: 600px) {
-    height: calc(100vh - 80px);
-    padding: 20px;
+    padding: 2vh 6vw;
+  }
+`;
+
+const DashboardContainer = styled.div`
+  display: flex;
+  overflow: hidden;
+  justify-content: flex-start;
+
+  & > * {
+    text-align: initial;
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
   }
 `;

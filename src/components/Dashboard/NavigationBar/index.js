@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import { FaUserAlt, FaCalendarAlt,  } from 'react-icons/fa';
+import { FaUserAlt, FaCalendarAlt } from 'react-icons/fa';
 import { BiStats } from 'react-icons/bi';
 import { AiFillSetting } from 'react-icons/ai';
 import { IoDocumentTextSharp, IoLogOut } from 'react-icons/io5';
@@ -42,7 +42,7 @@ export default function NavigationBar() {
       <Link to="/dashboard/exam">
         <NavigationButton active={isActive('/dashboard/exam')}>
           <IoDocumentTextSharp />
-          <span>Agendamento de exames</span>
+          <span>Agendamento</span>
         </NavigationButton>
       </Link>
 
@@ -66,11 +66,11 @@ export default function NavigationBar() {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #ddd;
-  box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #f1df38;
   width: 100px;
-  flex-shrink: 0;
+  height: 100%;
   justify-content: flex-start;
+  margin-right: 4vw;
 
   > a {
     text-decoration: none;
@@ -78,7 +78,7 @@ const Container = styled.div`
 
   @media (max-width: 600px) {
     width: 100%;
-    height: 80px;
     flex-direction: row;
+    margin-bottom: 4vh;
   }
 `;
