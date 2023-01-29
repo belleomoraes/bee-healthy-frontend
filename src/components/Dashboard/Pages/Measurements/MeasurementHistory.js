@@ -36,12 +36,18 @@ export default function MeasurementHistory() {
 }
 
 const Display = styled.div`
+  width: 60vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  margin-top: 30px;
+  margin-top: 100px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    font-size: 18px;
+  }
 `;
 
 const DisplayIon = styled.div`
@@ -50,7 +56,7 @@ const DisplayIon = styled.div`
   align-items: center;
 `;
 const Header = styled.div`
-  width: 100%;
+  width: 60vw;
   height: 40px;
   display: flex;
   align-items: center;
@@ -61,6 +67,11 @@ const Header = styled.div`
 
   > h1 {
     font-weight: bold;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    font-size: 18px;
   }
 `;
 

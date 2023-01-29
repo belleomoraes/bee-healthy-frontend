@@ -12,7 +12,7 @@ export default function Measurements() {
         <Option>Glicose</Option>
         <Option>Oxigenação</Option>
       </DisplayOptions>
-      <MeasurementHistory />
+      <MeasurementRegistration />
     </>
   );
 }

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import SearchBar from '../../SearchBar';
-import { MdAddCircle } from 'react-icons/md';
 import { Button } from '../../GeneralStyles/Button';
 import ExamRegistration from './ExamRegistrationPage';
 import WithoutExam from './WithoutExam';
@@ -14,10 +13,7 @@ export default function ExamsMainPage() {
       <Container>
         <ExamLine />
         <DisplayOptions>
-          <Button >
-            Inserir novo exame
-            <MdAddCircle size="30px" />
-          </Button>
+          <Button>Inserir novo exame</Button>
         </DisplayOptions>
       </Container>
     </>

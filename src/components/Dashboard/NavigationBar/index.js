@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { FaUserAlt, FaCalendarAlt } from 'react-icons/fa';
-import { GiMedicines } from 'react-icons/gi';
+import { FaUserAlt } from 'react-icons/fa';
 import { MdOutlineMedicalServices } from 'react-icons/md';
 import { TbVaccine } from 'react-icons/tb';
 import { IoDocumentTextSharp, IoLogOut } from 'react-icons/io5';

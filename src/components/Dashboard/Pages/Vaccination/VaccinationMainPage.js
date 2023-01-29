@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import SearchBar from '../../SearchBar';
-import { MdAddCircle } from 'react-icons/md';
 import { Button } from '../../GeneralStyles/Button';
 import VaccinationRegistration from './VaccinationRegistration';
 import VaccinationLine from './VaccinationLine';
@@ -12,10 +11,7 @@ export default function VaccinationMainPage() {
       <Container>
         <VaccinationLine />
         <DisplayOptions>
-          <Button>
-            Inserir novo registro de vacina
-            <MdAddCircle size="30px" />
-          </Button>
+          <Button>Inserir novo registro de vacina</Button>
         </DisplayOptions>
       </Container>
     </>
