@@ -9,4 +9,5 @@ border-radius: 30px;
   padding: 3vh 1vw;
   color: #FFFFFF;
   font-size: 20px;
+  cursor: pointer;
 `;

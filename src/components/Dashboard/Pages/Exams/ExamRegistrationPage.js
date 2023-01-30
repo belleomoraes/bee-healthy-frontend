@@ -1,8 +1,7 @@
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import styled from 'styled-components';
 import DateFnsUtils from '@date-io/date-fns';
 import Input from '../../../Forms/Input';
-import { Button } from '../../../Forms/Button';
+import { Button } from '../../GeneralStyles/Button';
 import { MdAddCircle } from 'react-icons/md';
 import { Container, FormWrapper, InputWrapper, SubmitContainer, Display } from '../../GeneralStyles/Registration';
 

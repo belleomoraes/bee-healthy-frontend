@@ -1,7 +1,7 @@
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import Input from '../../../Forms/Input';
-import { Button } from '../../../Forms/Button';
+import { Button } from '../../GeneralStyles/Button';
 import { Container, FormWrapper, InputWrapper, SubmitContainer } from '../../GeneralStyles/Registration';
 export default function VaccinationRegistration() {
   return (
