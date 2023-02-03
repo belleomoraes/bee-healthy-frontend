@@ -1,7 +1,5 @@
 import Typography from '@material-ui/core/Typography';
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import styled from 'styled-components';
-import DateFnsUtils from '@date-io/date-fns';
 import Input from '../../../Forms/Input';
 import { Button } from '../../GeneralStyles/Button';
 import dayjs from 'dayjs';
@@ -32,13 +30,12 @@ export default function Profile() {
       <Container>
         <FormWrapper>
           <InputWrapper>
-            <Input label="Nome Completo" name="name" type="text" value={profileInfo.name} onChange={handleChange} />
+            <Input label="Nome Completo" name="name" value={profileInfo.name} onChange={handleChange} />
           </InputWrapper>
           <InputWrapper>
             <Input
               name="cpf"
               label="CPF"
-              type="text"
               maxLength="14"
               mask="999.999.999-99"
               value={profileInfo.cpf}

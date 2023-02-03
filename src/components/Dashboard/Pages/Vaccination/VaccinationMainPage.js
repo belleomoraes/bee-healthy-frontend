@@ -9,7 +9,7 @@ export default function VaccinationMainPage() {
     <>
       <SearchBar />
       <Container>
-        <VaccinationRegistration />
+        <VaccinationLine />
         <DisplayOptions>
           <Button>Inserir novo registro de vacina</Button>
         </DisplayOptions>
