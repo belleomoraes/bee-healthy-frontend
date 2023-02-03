@@ -3,17 +3,24 @@ import SearchBar from '../../SearchBar';
 import { Button } from '../../GeneralStyles/Button';
 import VaccinationRegistration from './VaccinationRegistration';
 import VaccinationLine from './VaccinationLine';
+import { useState } from 'react';
 
 export default function VaccinationMainPage() {
+  const [click, setClick] = useState(false);
   return (
     <>
-      <SearchBar />
-      <Container>
-        <VaccinationLine />
-        <DisplayOptions>
-          <Button>Inserir novo registro de vacina</Button>
-        </DisplayOptions>
-      </Container>
+      {!click && (
+        <>
+          <SearchBar />
+          <Container>
+            <VaccinationLine />
+            <DisplayOptions>
+              <Button onClick={() => setClick(true)}>Inserir novo registro de vacina</Button>
+            </DisplayOptions>
+          </Container>
+        </>
+      )}
+      {click && <VaccinationRegistration />}
     </>
   );
 }

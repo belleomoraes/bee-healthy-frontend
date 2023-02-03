@@ -4,7 +4,7 @@ import { Button } from '../../GeneralStyles/Button';
 import ExamRegistration from './ExamRegistrationPage';
 import WithoutExam from './WithoutExam';
 import ExamLine from './ExamLine';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function ExamsMainPage() {
   const [click, setClick] = useState(false);
