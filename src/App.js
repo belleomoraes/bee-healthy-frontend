@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
-import Home from './pages/Home';
+
 import Dashboard from './pages/Dashboard';
 import Vaccination from './components/Dashboard/Pages/Vaccination';
 import Exams from './components/Dashboard/Pages/Exams';
@@ -19,7 +18,6 @@ export default function App() {
       <GlobalStyle />
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/dashboard" element={<Dashboard />}>

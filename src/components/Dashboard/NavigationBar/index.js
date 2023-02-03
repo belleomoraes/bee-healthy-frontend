@@ -16,12 +16,10 @@ export default function NavigationBar() {
 
   return (
     <Container>
-      <Link to="/home">
-        <NavigationButton active={isActive('/home')}>
-          <img src={logo} width="50px" />
-          <h1>bee-healthy</h1>
-        </NavigationButton>
-      </Link>
+      <NavigationButton>
+        <img src={logo} width="50px" />
+        <h1>bee-healthy</h1>
+      </NavigationButton>
 
       <Link to="/dashboard/profile">
         <NavigationButton active={isActive('/dashboard/profile')}>
