@@ -1,36 +1,54 @@
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import DateFnsUtils from '@date-io/date-fns';
 import Input from '../../../Forms/Input';
 import { Button } from '../../GeneralStyles/Button';
 import { Container, FormWrapper, InputWrapper, SubmitContainer } from '../../GeneralStyles/Registration';
+import { useState, useEffect } from 'react';
 export default function VaccinationRegistration() {
+  const [vaccinationInfo, setVaccinationInfo] = useState({
+    date: '',
+    name: '',
+    dose: '',
+    manufacturer: '',
+    lot: '',
+  });
+
+  function handleChange(e) {
+    e.preventDefault();
+    setVaccinationInfo({
+      ...vaccinationInfo,
+      [e.target.name]: e.target.value,
+    });
+  }
+
   return (
     <>
-      <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <Container>
-          <FormWrapper>
-            <InputWrapper>
-              <Input label="Data" name="date" type="text" />
-            </InputWrapper>
-            <InputWrapper>
-              <Input label="Nome da vacina" name="name" type="text" />
-            </InputWrapper>
-            <InputWrapper>
-              <Input label="Dose" name="dose" type="text" />
-            </InputWrapper>
-            <InputWrapper>
-              <Input label="Fabricante" name="manufacturer" type="text" />
-            </InputWrapper>
-            <InputWrapper>
-              <Input label="Lote" name="lot" type="text" />
-            </InputWrapper>
-          </FormWrapper>
+      <Container>
+        <FormWrapper>
+          <InputWrapper>
+            <Input label="Data" name="date" mask="99/99/9999" value={vaccinationInfo.date} onChange={handleChange} />
+          </InputWrapper>
+          <InputWrapper>
+            <Input label="Nome da vacina" name="name" value={vaccinationInfo.name} onChange={handleChange} />
+          </InputWrapper>
+          <InputWrapper>
+            <Input label="Dose" name="dose" value={vaccinationInfo.dose} onChange={handleChange} />
+          </InputWrapper>
+          <InputWrapper>
+            <Input
+              label="Fabricante"
+              name="manufacturer"
+              value={vaccinationInfo.manufacturer}
+              onChange={handleChange}
+            />
+          </InputWrapper>
+          <InputWrapper>
+            <Input label="Lote" name="lot" value={vaccinationInfo.lot} onChange={handleChange} />
+          </InputWrapper>
+        </FormWrapper>
 
-          <SubmitContainer>
-            <Button type="submit">Salvar alterações</Button>
-          </SubmitContainer>
-        </Container>
-      </MuiPickersUtilsProvider>
+        <SubmitContainer>
+          <Button>Salvar alterações</Button>
+        </SubmitContainer>
+      </Container>
     </>
   );
 }
