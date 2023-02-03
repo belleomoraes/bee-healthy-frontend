@@ -11,7 +11,7 @@ export default function ExamsMainPage() {
       <SearchBar />
 
       <Container>
-        <ExamRegistration />
+        <ExamLine />
         <DisplayOptions>
           <Button>Inserir novo exame</Button>
         </DisplayOptions>

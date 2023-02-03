@@ -3,31 +3,44 @@ import DateFnsUtils from '@date-io/date-fns';
 import Input from '../../../Forms/Input';
 import { Button } from '../../GeneralStyles/Button';
 import { Container, FormWrapper, InputWrapper, SubmitContainer } from '../../GeneralStyles/Registration';
+import { useState, useEffect } from 'react';
 export default function MeasurementRegistration() {
+  const [measurementInfo, setMeasurementInfo] = useState({
+    date: '',
+    morning: '',
+    afternoon: '',
+    night: '',
+  });
+
+  function handleChange(e) {
+    e.preventDefault();
+    setMeasurementInfo({
+      ...measurementInfo,
+      [e.target.name]: e.target.value,
+    });
+  }
   return (
     <>
-      <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <Container>
-          <FormWrapper>
-            <InputWrapper>
-              <Input label="Data" name="date" type="text" />
-            </InputWrapper>
-            <InputWrapper>
-              <Input label="Manhã" name="morning" type="text" />
-            </InputWrapper>
-            <InputWrapper>
-              <Input label="Tarde" name="afternoon" type="text" />
-            </InputWrapper>
-            <InputWrapper>
-              <Input label="Noite" name="night" type="text" />
-            </InputWrapper>
-          </FormWrapper>
+      <Container>
+        <FormWrapper>
+          <InputWrapper>
+            <Input label="Data" name="date" mask="99/99/9999" value={measurementInfo.date} onChange={handleChange} />
+          </InputWrapper>
+          <InputWrapper>
+            <Input label="Manhã" name="morning" value={measurementInfo.morning} onChange={handleChange} />
+          </InputWrapper>
+          <InputWrapper>
+            <Input label="Tarde" name="afternoon" value={measurementInfo.afternoon} onChange={handleChange} />
+          </InputWrapper>
+          <InputWrapper>
+            <Input label="Noite" name="night" value={measurementInfo.night} onChange={handleChange} />
+          </InputWrapper>
+        </FormWrapper>
 
-          <SubmitContainer>
-            <Button type="submit">Salvar alterações</Button>
-          </SubmitContainer>
-        </Container>
-      </MuiPickersUtilsProvider>
+        <SubmitContainer>
+          <Button>Salvar alterações</Button>
+        </SubmitContainer>
+      </Container>
     </>
   );
 }
