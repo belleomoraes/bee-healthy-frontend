@@ -10,6 +10,8 @@ export const Login = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 12vh;
+  background-color: #f1df38;
+
   h1 {
     margin-top: 10px;
     font-family: Sacramento;

@@ -16,6 +16,10 @@ export default function Dashboard() {
 const PagesContainer = styled.div`
   padding: 8vh 2vw;
   margin-left: 100px;
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
 
   & > * {
     text-align: initial;

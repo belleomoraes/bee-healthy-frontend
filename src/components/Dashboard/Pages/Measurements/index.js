@@ -37,7 +37,7 @@ const StyledTypography = styled(Typography)`
 `;
 
 const DisplayOptions = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: space-around;
   justify-content: space-around;
