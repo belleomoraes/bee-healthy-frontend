@@ -41,7 +41,7 @@ const Display = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  margin-top: 100px;
+  margin-right: 6vw;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   @media (max-width: 600px) {
