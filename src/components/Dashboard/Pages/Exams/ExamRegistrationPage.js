@@ -6,7 +6,7 @@ import { MdAddCircle } from 'react-icons/md';
 import { Container, FormWrapper, InputWrapper, SubmitContainer, Display } from '../../GeneralStyles/Registration';
 import { useState, useEffect } from 'react';
 
-export default function ExamRegistration() {
+export default function ExamRegistration({ setClick }) {
   const [examInfo, setExamInfo] = useState({
     date: '',
     description: '',
@@ -51,6 +51,7 @@ export default function ExamRegistration() {
 
           <SubmitContainer>
             <Button type="submit">Salvar alterações</Button>
+            <Button onClick={() => setClick(false)}>Voltar</Button>
           </SubmitContainer>
         </Container>
       </MuiPickersUtilsProvider>

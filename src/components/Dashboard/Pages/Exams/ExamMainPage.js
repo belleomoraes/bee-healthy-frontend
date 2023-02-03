@@ -21,7 +21,7 @@ export default function ExamsMainPage() {
           </Container>
         </Margin>
       )}
-      {click && <ExamRegistration />}
+      {click && <ExamRegistration setClick={setClick} />}
     </>
   );
 }
@@ -46,4 +46,3 @@ export const Margin = styled.div`
     margin-top: 20px;
   }
 `;
-

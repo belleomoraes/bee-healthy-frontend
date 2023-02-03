@@ -4,7 +4,8 @@ import Input from '../../../Forms/Input';
 import { Button } from '../../GeneralStyles/Button';
 import { Container, FormWrapper, InputWrapper, SubmitContainer } from '../../GeneralStyles/Registration';
 import { useState, useEffect } from 'react';
-export default function MeasurementRegistration() {
+import { useNavigate } from 'react-router-dom';
+export default function MeasurementRegistration({ setClick }) {
   const [measurementInfo, setMeasurementInfo] = useState({
     date: '',
     morning: '',
@@ -19,6 +20,7 @@ export default function MeasurementRegistration() {
       [e.target.name]: e.target.value,
     });
   }
+
   return (
     <>
       <Container>
@@ -39,6 +41,7 @@ export default function MeasurementRegistration() {
 
         <SubmitContainer>
           <Button>Salvar alterações</Button>
+          <Button onClick={() => setClick(false)}>Voltar</Button>
         </SubmitContainer>
       </Container>
     </>

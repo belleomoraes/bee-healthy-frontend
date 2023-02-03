@@ -22,7 +22,7 @@ export default function VaccinationMainPage() {
           </Container>
         </Margin>
       )}
-      {click && <VaccinationRegistration />}
+      {click && <VaccinationRegistration setClick={setClick} />}
     </>
   );
 }

@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 export const SubmitContainer = styled.div`
   margin-top: 40px !important;
-  width: 40% !important;
+  width: 60% !important;
+  display: flex;
+
 `;
 
 export const Container = styled.div`

@@ -11,6 +11,7 @@ export const Button = styled.div`
   color: #ffffff;
   font-size: 15px;
   margin-bottom: 5vh;
+  margin-right: 2vw;
   cursor: pointer;
 
   &:hover {

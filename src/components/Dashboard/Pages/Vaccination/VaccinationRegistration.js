@@ -2,7 +2,7 @@ import Input from '../../../Forms/Input';
 import { Button } from '../../GeneralStyles/Button';
 import { Container, FormWrapper, InputWrapper, SubmitContainer } from '../../GeneralStyles/Registration';
 import { useState, useEffect } from 'react';
-export default function VaccinationRegistration() {
+export default function VaccinationRegistration({ setClick }) {
   const [vaccinationInfo, setVaccinationInfo] = useState({
     date: '',
     name: '',
@@ -47,6 +47,7 @@ export default function VaccinationRegistration() {
 
         <SubmitContainer>
           <Button>Salvar alterações</Button>
+          <Button onClick={() => setClick(false)}>Voltar</Button>
         </SubmitContainer>
       </Container>
     </>

@@ -3,21 +3,22 @@ import styled from 'styled-components';
 import MeasurementHistory from './MeasurementHistory';
 import MeasurementRegistration from './MeasurementRegistrationPage';
 import { useState } from 'react';
-import { Button } from '../../GeneralStyles/Button';
+import { ButtonInsertionFilter } from '../../GeneralStyles/ButtonInsertionFilter';
 
 export default function Measurements() {
   const [click, setClick] = useState(false);
+
   return (
     <>
       {!click && (
         <>
           <Display>
+            <ButtonInsertionFilter onClick={() => setClick(true)}>Inserir nova medição</ButtonInsertionFilter>
             <MeasurementHistory />
-            <Button onClick={() => setClick(true)}>Inserir nova medição</Button>
           </Display>
         </>
       )}
-      {click && <MeasurementRegistration />}
+      {click && <MeasurementRegistration setClick={setClick} />}
     </>
   );
 }
@@ -25,9 +26,7 @@ export default function Measurements() {
 const Display = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 60px;
+  flex-direction: column;
 
   @media (max-width: 600px) {
     width: 400px;
