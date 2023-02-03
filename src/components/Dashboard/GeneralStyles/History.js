@@ -7,19 +7,27 @@ export const Container = styled.div`
 `;
 
 export const DateFilter = styled.div`
-  width: 300px;
-  height: 5vh;
+  width: 40vw;
+  height: 8vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 6vh;
-  font-size: 2.5vh;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 3.2vh;
+  background-color: #f1df38;
+
+  @media (max-width: 600px) {
+    width: 200px;
+  }
+ 
 `;
 export const Display = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: space-between;
+
   h3 {
     font-size: 2.3vh;
     margin: 4vh;
@@ -34,13 +42,14 @@ export const DisplayIon = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 30vw;
-  height: 15vh;
+  width: 40vw;
+  height: 20vh;
   display: flex;
   justify-content: space-between;
   padding: 2vh 3vw;
   font-size: 25px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-bottom: 20px;
 
   h1 {
     font-weight: bold;

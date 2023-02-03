@@ -5,6 +5,7 @@ import ExamRegistration from './ExamRegistrationPage';
 import WithoutExam from './WithoutExam';
 import ExamLine from './ExamLine';
 import { useState } from 'react';
+import { ButtonInsertionFilter } from '../../GeneralStyles/ButtonInsertionFilter';
 
 export default function ExamsMainPage() {
   const [click, setClick] = useState(false);
@@ -12,23 +13,22 @@ export default function ExamsMainPage() {
   return (
     <>
       {!click && (
-        <>
+        <Margin>
           <SearchBar />
           <Container>
+            <ButtonInsertionFilter onClick={() => setClick(true)}>Inserir novo exame</ButtonInsertionFilter>
             <ExamLine />
-            <DisplayOptions>
-              <Button onClick={() => setClick(true)}>Inserir novo exame</Button>
-            </DisplayOptions>
           </Container>
-        </>
+        </Margin>
       )}
       {click && <ExamRegistration />}
     </>
   );
 }
 
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
+  flex-direction: column;
 
   @media (max-width: 600px) {
     display: flex;
@@ -37,16 +37,13 @@ const Container = styled.div`
   }
 `;
 
-const DisplayOptions = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: space-around;
-  position: absolute;
-  top: 40vh;
-  right: 20vw;
+export const Margin = styled.div`
+  margin-left: 100px;
+  margin-top: 45px;
 
   @media (max-width: 600px) {
-    right: 3vw;
+    margin-left: 10px;
+    margin-top: 20px;
   }
 `;
+

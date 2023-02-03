@@ -13,9 +13,16 @@ export const Button = styled.div`
   margin-bottom: 5vh;
   cursor: pointer;
 
+  &:hover {
+    opacity: 90%;
+    background-color: #f1df38;
+    color: #333333;
+  }
+
   @media (max-width: 600px) {
     width: 150px;
     height: 90px;
+    font-size: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;

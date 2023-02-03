@@ -24,7 +24,7 @@ const PagesContainer = styled.div`
   @media (max-width: 600px) {
     padding: 2vh 6vw;
     margin-left: 10px;
-    margin-top: 180px;
+    margin-top: 90px;
   }
 `;
 

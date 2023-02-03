@@ -6,9 +6,9 @@ export default function VaccinationLine() {
   return (
     <Container>
       <DateFilter>
-        <BiChevronDownCircle />
+        <BiChevronDownCircle cursor="pointer" />
         Organizar por data
-        <BiChevronUpCircle />
+        <BiChevronUpCircle cursor="pointer" />
       </DateFilter>
       <Display>
         <h3>08/05/2022</h3>
@@ -19,8 +19,8 @@ export default function VaccinationLine() {
           </Display>
 
           <DisplayIon>
-            <MdDelete color="red" />
-            <FiEdit color="green" />
+            <MdDelete color="red" cursor="pointer" />
+            <FiEdit color="green" cursor="pointer" />
           </DisplayIon>
         </Card>
 
@@ -32,8 +32,8 @@ export default function VaccinationLine() {
           </Display>
 
           <DisplayIon>
-            <MdDelete color="red" />
-            <FiEdit color="green" />
+            <MdDelete color="red" cursor="pointer" />
+            <FiEdit color="green" cursor="pointer" />
           </DisplayIon>
         </Card>
 

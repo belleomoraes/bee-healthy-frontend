@@ -72,7 +72,7 @@ const Container = styled.div`
   top: 0;
   bottom: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
 
   h1 {
     font-family: Sacramento;
