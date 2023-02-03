@@ -4,18 +4,25 @@ import { Button } from '../../GeneralStyles/Button';
 import ExamRegistration from './ExamRegistrationPage';
 import WithoutExam from './WithoutExam';
 import ExamLine from './ExamLine';
+import { useState, useEffect } from 'react';
 
 export default function ExamsMainPage() {
+  const [click, setClick] = useState(false);
+
   return (
     <>
-      <SearchBar />
-
-      <Container>
-        <ExamLine />
-        <DisplayOptions>
-          <Button>Inserir novo exame</Button>
-        </DisplayOptions>
-      </Container>
+      {!click && (
+        <>
+          <SearchBar />
+          <Container>
+            <ExamLine />
+            <DisplayOptions>
+              <Button onClick={() => setClick(true)}>Inserir novo exame</Button>
+            </DisplayOptions>
+          </Container>
+        </>
+      )}
+      {click && <ExamRegistration />}
     </>
   );
 }
