@@ -26,7 +26,7 @@ export default function ExamsMainPage() {
           <Container>
             <ButtonInsertionFilter onClick={() => setClick(true)}>Inserir novo exame</ButtonInsertionFilter>
             {examList.length < 1 && <WithoutExam />}
-            {examList.length >= 1 && <ExamLine />}
+            {examList.length >= 1 && <ExamLine examList={examList} />}
           </Container>
         </Margin>
       )}

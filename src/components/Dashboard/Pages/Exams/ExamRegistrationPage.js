@@ -5,11 +5,8 @@ import { Container, FormWrapper, InputWrapper, SubmitContainer, Display } from '
 import { useState } from 'react';
 import useSaveExam from '../../../../hooks/api/useSaveExam';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
-import dayjs from 'dayjs';
 
 export default function ExamRegistration({ setClick }) {
-  const navigate = useNavigate();
   const { save } = useSaveExam();
   const [cardFile, setCardFile] = useState();
   const [examInfo, setExamInfo] = useState({
@@ -43,10 +40,9 @@ export default function ExamRegistration({ setClick }) {
         local: '',
         name: '',
       });
-      navigate('/dashboard/exam');
+      setClick(false);
       toast('Informações salvas com sucesso!');
     } catch (err) {
-      console.log(err);
       toast('Não foi possível salvar as informações!');
     }
   }

@@ -2,7 +2,8 @@ import { FiEdit } from 'react-icons/fi';
 import { MdDelete } from 'react-icons/md';
 import { BiChevronDownCircle, BiChevronUpCircle } from 'react-icons/bi';
 import { Container, DateFilter, Display, DisplayIon, Card } from '../../GeneralStyles/History';
-export default function ExamLine() {
+import dayjs from 'dayjs';
+export default function ExamLine({ examList }) {
   return (
     <Container>
       <DateFilter>
@@ -11,93 +12,22 @@ export default function ExamLine() {
         <BiChevronUpCircle cursor="pointer" />
       </DateFilter>
       <Display>
-        <h3>08/05/2022</h3>
-        <Card>
-          <Display>
-            <h1>Ginecologista</h1>
-            <h2>Dra. Luciana Garcia</h2>
-          </Display>
+        {examList.map((exam) => (
+          <>
+            <h3>{dayjs(exam.createdAt).format('MM/DD/YYYY')}</h3>
+            <Card>
+              <Display>
+                <h1>{exam.name}</h1>
+                <h2>{exam.local}</h2>
+              </Display>
 
-          <DisplayIon>
-            <MdDelete color="red" cursor="pointer" />
-            <FiEdit color="green" cursor="pointer" />
-          </DisplayIon>
-        </Card>
-
-        <h3>08/05/2022</h3>
-        <Card>
-          <Display>
-            <h1>Ginecologista</h1>
-            <h2>Dra. Luciana Garcia</h2>
-          </Display>
-
-          <DisplayIon>
-            <MdDelete color="red" />
-            <FiEdit color="green" />
-          </DisplayIon>
-        </Card>
-
-        <h3>08/05/2022</h3>
-        <Card>
-          <Display>
-            <h1>Ginecologista</h1>
-            <h2>Dra. Luciana Garcia</h2>
-          </Display>
-
-          <DisplayIon>
-            <MdDelete color="red" />
-            <FiEdit color="green" />
-          </DisplayIon>
-        </Card>
-
-        <h3>08/05/2022</h3>
-        <Card>
-          <Display>
-            <h1>Ginecologista</h1>
-            <h2>Dra. Luciana Garcia</h2>
-          </Display>
-
-          <DisplayIon>
-            <MdDelete color="red" />
-            <FiEdit color="green" />
-          </DisplayIon>
-        </Card>
-        <h3>08/05/2022</h3>
-        <Card>
-          <Display>
-            <h1>Ginecologista</h1>
-            <h2>Dra. Luciana Garcia</h2>
-          </Display>
-
-          <DisplayIon>
-            <MdDelete color="red" />
-            <FiEdit color="green" />
-          </DisplayIon>
-        </Card>
-        <h3>08/05/2022</h3>
-        <Card>
-          <Display>
-            <h1>Ginecologista</h1>
-            <h2>Dra. Luciana Garcia</h2>
-          </Display>
-
-          <DisplayIon>
-            <MdDelete color="red" />
-            <FiEdit color="green" />
-          </DisplayIon>
-        </Card>
-        <h3>08/05/2022</h3>
-        <Card>
-          <Display>
-            <h1>Ginecologista</h1>
-            <h2>Dra. Luciana Garcia</h2>
-          </Display>
-
-          <DisplayIon>
-            <MdDelete color="red" />
-            <FiEdit color="green" />
-          </DisplayIon>
-        </Card>
+              <DisplayIon>
+                <MdDelete color="red" cursor="pointer" />
+                <FiEdit color="green" cursor="pointer" />
+              </DisplayIon>
+            </Card>
+          </>
+        ))}
       </Display>
     </Container>
   );
