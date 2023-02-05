@@ -35,7 +35,7 @@ export default function Profile() {
       setProfileInfo({
         name: profile.name,
         cpf: profile.cpf,
-        birthday: profile.birthday,
+        birthday: dayjs(profile.birthday).format('MM/DD/YYYY'),
         sex: profile.sex,
         blood: profile.blood,
         phone: profile.phone,
@@ -47,7 +47,7 @@ export default function Profile() {
     const body = {
       name: profileInfo.name,
       cpf: profileInfo.cpf.replaceAll('.', '').replaceAll('-', ''),
-      birthday: dayjs(profileInfo.birthday).toISOString(),
+      birthday: dayjs(profileInfo.birthday),
       sex: profileInfo.sex,
       blood: profileInfo.blood,
       phone: profileInfo.phone.replace(/[^0-9]+/g, '').replace(/^(\d{2})(9?\d{4})(\d{4})$/, '($1) $2-$3'),

@@ -44,7 +44,7 @@ export default function SignIn() {
       <h1>bee-healthy</h1>
       <Wrapper>
         <Input label="E-mail" name="email" value={loginInfo.email} onChange={handleChange} />
-        <Input label="Senha" name="password" value={loginInfo.password} onChange={handleChange} />
+        <Input label="Senha" name="password" type="password" value={loginInfo.password} onChange={handleChange} />
         <Button onClick={() => logIn({ loginInfo })}>Entrar</Button>
         <h2 onClick={ChangeScreen}>Primeira vez? Cadastre-se</h2>
       </Wrapper>
