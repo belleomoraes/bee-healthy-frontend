@@ -7,6 +7,7 @@ import { Container, FormWrapper, InputWrapper, SubmitContainer, Display } from '
 import { useState, useEffect } from 'react';
 
 export default function ExamRegistration({ setClick }) {
+  const [cardFile, setCardFile] = useState();
   const [examInfo, setExamInfo] = useState({
     date: '',
     description: '',
@@ -14,6 +15,7 @@ export default function ExamRegistration({ setClick }) {
     name: '',
   });
 
+  const handleUploadFile = (e) => setCardFile(e.target.files[0]);
   function handleChange(e) {
     e.preventDefault();
     setExamInfo({
@@ -28,7 +30,7 @@ export default function ExamRegistration({ setClick }) {
         <Container>
           <FormWrapper>
             <InputWrapper>
-              <Input label="Data" name="date" mask="99/99/9999" value={examInfo.date} onChange={handleChange} />
+              <Input label="Data" name="date" mask="99/99/9999" value={examInfo.date} onChange={handleUploadFile} />
             </InputWrapper>
             <InputWrapper>
               <Input label="Name" name="name" value={examInfo.name} onChange={handleChange} />
@@ -45,7 +47,14 @@ export default function ExamRegistration({ setClick }) {
                 <h1>Arquivos</h1>
                 <MdAddCircle />
               </Display>
-              <Input label="Insira um arquivo" name="files" />
+              <Input
+                label="Insira um arquivo"
+                name="files"
+                type="file"
+                value={examInfo.file}
+                onChange={(e) => setCardFile(e.target.files[0])}
+                accept="application/pdf"
+              />
             </InputWrapper>
           </FormWrapper>
 
