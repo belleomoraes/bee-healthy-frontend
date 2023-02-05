@@ -23,7 +23,6 @@ export default function SignUpScreen() {
   }
 
   async function register({ registrationInfo }) {
-    console.log(registrationInfo);
     try {
       await signUp(registrationInfo);
       setRegistrationInfo({});

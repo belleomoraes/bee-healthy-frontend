@@ -4,11 +4,13 @@ import Input from '../../../Forms/Input';
 import { Button } from '../../GeneralStyles/Button';
 import dayjs from 'dayjs';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useProfile from '../../../../hooks/api/useProfile';
 import useSaveProfile from '../../../../hooks/api/useSaveProfile';
 import { toast } from 'react-toastify';
 
 export default function Profile() {
+  const navigate = useNavigate();
   const { save } = useSaveProfile();
   const { profile } = useProfile();
   const [profileInfo, setProfileInfo] = useState({
@@ -42,16 +44,24 @@ export default function Profile() {
   }, [profile]);
 
   async function saveProfileInformation({ profileInfo }) {
+    const body = {
+      name: profileInfo.name,
+      cpf: profileInfo.cpf.replaceAll('.', '').replaceAll('-', ''),
+      birthday: dayjs(profileInfo.birthday).toISOString(),
+      sex: profileInfo.sex,
+      blood: profileInfo.blood,
+      phone: profileInfo.phone.replace(/[^0-9]+/g, '').replace(/^(\d{2})(9?\d{4})(\d{4})$/, '($1) $2-$3'),
+    };
+
     try {
-      await save(profileInfo);
-      setProfileInfo({ name: '', cpf: '', birthday: '', sex: '', blood: '', phone: '' });
+      await save(body);
+      navigate('/dashboard/profile');
       toast('Informações salvas com sucesso!');
     } catch (err) {
       toast('Não foi possível salvar as informações!');
     }
   }
 
-  console.log(profileInfo);
   return (
     <>
       <StyledTypography variant="h4">Perfil</StyledTypography>
