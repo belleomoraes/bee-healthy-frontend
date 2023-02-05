@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import SearchBar from '../../SearchBar';
-import { Button } from '../../GeneralStyles/Button';
 import ExamRegistration from './ExamRegistrationPage';
 import WithoutExam from './WithoutExam';
 import ExamLine from './ExamLine';
