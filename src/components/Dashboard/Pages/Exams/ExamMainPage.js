@@ -4,11 +4,20 @@ import { Button } from '../../GeneralStyles/Button';
 import ExamRegistration from './ExamRegistrationPage';
 import WithoutExam from './WithoutExam';
 import ExamLine from './ExamLine';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ButtonInsertionFilter } from '../../GeneralStyles/ButtonInsertionFilter';
+import useExam from '../../../../hooks/api/useExam';
 
 export default function ExamsMainPage() {
   const [click, setClick] = useState(false);
+  const [examList, setExamList] = useState([]);
+  const { exam } = useExam();
+
+  useEffect(() => {
+    if (exam) {
+      setExamList(exam);
+    }
+  }, [exam]);
 
   return (
     <>
@@ -17,7 +26,8 @@ export default function ExamsMainPage() {
           <SearchBar />
           <Container>
             <ButtonInsertionFilter onClick={() => setClick(true)}>Inserir novo exame</ButtonInsertionFilter>
-            <ExamLine />
+            {examList.length < 1 && <WithoutExam />}
+            {examList.length >= 1 && <ExamLine />}
           </Container>
         </Margin>
       )}
