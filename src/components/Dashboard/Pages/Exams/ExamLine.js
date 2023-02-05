@@ -3,7 +3,15 @@ import { MdDelete } from 'react-icons/md';
 import { BiChevronDownCircle, BiChevronUpCircle } from 'react-icons/bi';
 import { Container, DateFilter, Display, DisplayIon, Card } from '../../GeneralStyles/History';
 import dayjs from 'dayjs';
-export default function ExamLine({ examList }) {
+import { useNavigate } from 'react-router-dom';
+export default function ExamLine({ setClick, examList, setId }) {
+  const navigate = useNavigate();
+
+  function edit(exam) {
+    setClick(true);
+    setId(exam.id);
+    navigate(`?examId=${exam.id}`);
+  }
   return (
     <Container>
       <DateFilter>
@@ -23,7 +31,7 @@ export default function ExamLine({ examList }) {
 
               <DisplayIon>
                 <MdDelete color="red" cursor="pointer" />
-                <FiEdit color="green" cursor="pointer" />
+                <FiEdit color="green" cursor="pointer" onClick={() => edit(exam)} />
               </DisplayIon>
             </Card>
           </>

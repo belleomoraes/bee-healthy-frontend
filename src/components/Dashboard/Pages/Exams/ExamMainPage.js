@@ -9,6 +9,7 @@ import useExam from '../../../../hooks/api/useExam';
 
 export default function ExamsMainPage() {
   const [click, setClick] = useState(false);
+  const [id, setId] = useState('');
   const [examList, setExamList] = useState([]);
   const { exam } = useExam();
 
@@ -26,11 +27,11 @@ export default function ExamsMainPage() {
           <Container>
             <ButtonInsertionFilter onClick={() => setClick(true)}>Inserir novo exame</ButtonInsertionFilter>
             {examList.length < 1 && <WithoutExam />}
-            {examList.length >= 1 && <ExamLine examList={examList} />}
+            {examList.length >= 1 && <ExamLine setClick={setClick} examList={examList} setId={setId} />}
           </Container>
         </Margin>
       )}
-      {click && <ExamRegistration setClick={setClick} />}
+      {click && <ExamRegistration setClick={setClick} id={id} />}
     </>
   );
 }

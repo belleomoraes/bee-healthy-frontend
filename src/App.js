@@ -27,7 +27,7 @@ export default function App() {
               <Route path="exams" element={<Exams />} />
               <Route path="measurements" element={<Measurement />} />
               <Route path="logout" element={<LogOut />} />
-              <Route index path="*" element={<Navigate to="/dashboard/profile" />} />
+              {/* <Route index path="*" element={<Navigate to="/dashboard/profile" />} /> */}
             </Route>
           </Routes>
         </Router>
