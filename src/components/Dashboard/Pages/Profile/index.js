@@ -4,8 +4,13 @@ import Input from '../../../Forms/Input';
 import { Button } from '../../GeneralStyles/Button';
 import dayjs from 'dayjs';
 import { useState, useEffect } from 'react';
+import useProfile from '../../../../hooks/api/useProfile';
+import useSaveProfile from '../../../../hooks/api/useSaveProfile';
+import { toast } from 'react-toastify';
 
 export default function Profile() {
+  const { save } = useSaveProfile();
+  const { profile } = useProfile();
   const [profileInfo, setProfileInfo] = useState({
     name: '',
     cpf: '',
@@ -23,6 +28,30 @@ export default function Profile() {
     });
   }
 
+  useEffect(() => {
+    if (profile) {
+      setProfileInfo({
+        name: profile.name,
+        cpf: profile.cpf,
+        birthday: profile.birthday,
+        sex: profile.sex,
+        blood: profile.blood,
+        phone: profile.phone,
+      });
+    }
+  }, [profile]);
+
+  async function saveProfileInformation({ profileInfo }) {
+    try {
+      await save(profileInfo);
+      setProfileInfo({ name: '', cpf: '', birthday: '', sex: '', blood: '', phone: '' });
+      toast('Informações salvas com sucesso!');
+    } catch (err) {
+      toast('Não foi possível salvar as informações!');
+    }
+  }
+
+  console.log(profileInfo);
   return (
     <>
       <StyledTypography variant="h4">Perfil</StyledTypography>
@@ -68,7 +97,7 @@ export default function Profile() {
           </InputWrapper>
         </FormWrapper>
         <SubmitContainer>
-          <Button>Salvar informações</Button>
+          <Button onClick={() => saveProfileInformation({ profileInfo })}>Salvar informações</Button>
         </SubmitContainer>
       </Container>
     </>

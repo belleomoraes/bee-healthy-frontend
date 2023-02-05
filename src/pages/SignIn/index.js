@@ -1,14 +1,16 @@
 import { Button } from '../../components/Dashboard/GeneralStyles/Button';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import logo from '../../assets/images/bee-healthy.png';
 import Input from '../../components/Forms/Input';
 import { Login, Wrapper } from '../../components/Dashboard/GeneralStyles/SignIn&Up';
 import useSignIn from '../../hooks/api/useSignIn';
 import { toast } from 'react-toastify';
+import UserContext from '../../contexts/UserContext';
 export default function SignIn() {
   const navigate = useNavigate();
   const { signIn } = useSignIn();
+  const { setUserData } = useContext(UserContext);
   const [loginInfo, setLoginInfo] = useState({
     email: '',
     password: '',
@@ -23,7 +25,8 @@ export default function SignIn() {
 
   async function logIn({ loginInfo }) {
     try {
-      await signIn(loginInfo);
+      const userData = await signIn(loginInfo);
+      setUserData(userData);
       setLoginInfo({});
       toast('Login realizado com sucesso!');
       navigate('/dashboard');
