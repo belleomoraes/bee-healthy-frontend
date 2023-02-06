@@ -2,7 +2,16 @@ import { FiEdit } from 'react-icons/fi';
 import { MdDelete } from 'react-icons/md';
 import { BiChevronDownCircle, BiChevronUpCircle } from 'react-icons/bi';
 import { Container, DateFilter, Display, DisplayIon, Card } from '../../GeneralStyles/History';
-export default function VaccinationLine() {
+import { useNavigate } from 'react-router-dom';
+import dayjs from 'dayjs';
+export default function VaccinationLine({ setClick, vaccinationList, setId }) {
+  const navigate = useNavigate();
+
+  function edit(vaccination) {
+    setClick(true);
+    setId(vaccination.id);
+    navigate(`?vaccinationId=${vaccination.id}`);
+  }
   return (
     <Container>
       <DateFilter>
@@ -11,44 +20,22 @@ export default function VaccinationLine() {
         <BiChevronUpCircle cursor="pointer" />
       </DateFilter>
       <Display>
-        <h3>08/05/2022</h3>
-        <Card>
-          <Display>
-            <h1>COVID-19</h1>
-            <h2>1ª dose</h2>
-          </Display>
+        {vaccinationList.map((vaccination) => (
+          <>
+            <h3>{dayjs(vaccination.createdAt).format('MM/DD/YYYY')}</h3>
+            <Card>
+              <Display>
+                <h1>{vaccination.name}</h1>
+                <h2>{vaccination.manufacturer}</h2>
+              </Display>
 
-          <DisplayIon>
-            <MdDelete color="red" cursor="pointer" />
-            <FiEdit color="green" cursor="pointer" />
-          </DisplayIon>
-        </Card>
-
-        <h3>08/05/2022</h3>
-        <Card>
-          <Display>
-            <h1>COVID-19</h1>
-            <h2>2ª dose</h2>
-          </Display>
-
-          <DisplayIon>
-            <MdDelete color="red" cursor="pointer" />
-            <FiEdit color="green" cursor="pointer" />
-          </DisplayIon>
-        </Card>
-
-        <h3>08/05/2022</h3>
-        <Card>
-          <Display>
-            <h1>COVID-19</h1>
-            <h2>3ª dose</h2>
-          </Display>
-
-          <DisplayIon>
-            <MdDelete color="red" />
-            <FiEdit color="green" />
-          </DisplayIon>
-        </Card>
+              <DisplayIon>
+                <MdDelete color="red" cursor="pointer" />
+                <FiEdit color="green" cursor="pointer" onClick={() => edit(vaccination)} />
+              </DisplayIon>
+            </Card>
+          </>
+        ))}
       </Display>
     </Container>
   );

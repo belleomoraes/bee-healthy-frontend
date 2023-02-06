@@ -36,7 +36,7 @@ export default function VaccinationMainPage() {
           </Container>
         </Margin>
       )}
-      {click && <VaccinationRegistration setClick={setClick} />}
+      {click && <VaccinationRegistration setClick={setClick} id={id} />}
     </>
   );
 }

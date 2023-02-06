@@ -7,12 +7,12 @@ export default function useUpdateVaccination() {
   const {
     loading: vaccinationIdLoading,
     error: vaccinationIdError,
-    act: getVaccinationIdInformation,
-  } = useAsync((query) => vaccinationApi.getVaccinationIdInformation(query, token), false);
+    act: saveUpdate,
+  } = useAsync((body, id) => vaccinationApi.saveUpdate(body, id, token), false);
 
   return {
     vaccinationIdLoading,
     vaccinationIdError,
-    getVaccinationIdInformation,
+    saveUpdate,
   };
 }
