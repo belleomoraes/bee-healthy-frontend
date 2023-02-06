@@ -29,7 +29,7 @@ export default function SignIn() {
       setUserData(userData);
       setLoginInfo({});
       toast('Login realizado com sucesso!');
-      navigate('/dashboard');
+      navigate('/dashboard/profile');
     } catch (err) {
       toast('Não foi possível fazer o login!');
     }
